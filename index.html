@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>2D FIR Image Filtering</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- defer makes JavaScript load after the HTML is parsed -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Web-Based Digital Image Filtering</h1>
+
+        <p>
+            Image Enhancement and Edge Detection Using 2D FIR Filters
+        </p>
+
+        <label for="imageUpload">Upload an image:</label>
+        <input type="file" id="imageUpload" accept="image/*">
+
+        <br><br>
+
+        <label for="filterSelect">Select a filter:</label>
+
+        <select id="filterSelect">
+            <option value="original">Original Image</option>
+            <option value="mean">Mean Filter</option>
+            <option value="gaussian">Gaussian Filter</option>
+            <option value="sharpen">Sharpen Filter</option>
+            <option value="sobel">Sobel Edge Detection</option>
+            <option value="laplacian">Laplacian Edge Detection</option>
+        </select>
+
+        <br><br>
+
+        <button id="applyBtn">Apply Filter</button>
+        <button id="resetBtn">Reset</button>
+
+        <div class="images">
+
+            <div>
+                <h2>Original Image</h2>
+                <canvas id="originalCanvas"></canvas>
+            </div>
+
+            <div>
+                <h2>Processed Image</h2>
+                <canvas id="processedCanvas"></canvas>
+            </div>
+
+        </div>
+
+        <h2>Kernel Used</h2>
+        <pre id="kernelDisplay">No kernel selected</pre>
+
+        <h2>Description</h2>
+        <p id="filterDescription">
+            Upload an image and select a filter.
+        </p>
+
+    </div>
+
+</body>
+</html>
